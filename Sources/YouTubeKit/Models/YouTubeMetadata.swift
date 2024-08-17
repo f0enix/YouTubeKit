@@ -26,6 +26,8 @@ public struct YouTubeMetadata {
     }
 
     public let author: String
+    public let videoId: String
+    
 
     /// Initialize YouTubeMetadata from video details.
     ///
@@ -38,7 +40,8 @@ public struct YouTubeMetadata {
             title: videoDetails.title,
             description: videoDetails.shortDescription,
             thumbnail: videoDetails.thumbnail.thumbnails.map { YouTubeMetadata.Thumbnail(url: $0.url) }.last,
-            author: videoDetails.author
+            author: videoDetails.author,
+            videoId: videoDetails.videoId
         )
     }
     
