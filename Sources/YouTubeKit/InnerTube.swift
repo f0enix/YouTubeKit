@@ -160,6 +160,7 @@ class InnerTube {
             let title: String
             let shortDescription: String
             let thumbnail: Thumbnail
+            let author: String
 
             struct Thumbnail: Decodable {
                 let thumbnails: [ThumbnailMetadata]
