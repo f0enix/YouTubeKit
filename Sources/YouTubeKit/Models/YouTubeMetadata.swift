@@ -25,6 +25,8 @@ public struct YouTubeMetadata {
         public let url: URL
     }
 
+    public let author: String
+
     /// Initialize YouTubeMetadata from video details.
     ///
     /// - Parameters:
@@ -35,7 +37,8 @@ public struct YouTubeMetadata {
         YouTubeMetadata(
             title: videoDetails.title,
             description: videoDetails.shortDescription,
-            thumbnail: videoDetails.thumbnail.thumbnails.map { YouTubeMetadata.Thumbnail(url: $0.url) }.last
+            thumbnail: videoDetails.thumbnail.thumbnails.map { YouTubeMetadata.Thumbnail(url: $0.url) }.last,
+            author: videoDetails.author
         )
     }
     
